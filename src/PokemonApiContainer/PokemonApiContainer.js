@@ -23,7 +23,50 @@ export default class PokemonApiContainer extends Component{
 	}
 	render(){
 		if(this.state.pokemon.results===undefined){
-			return <h1>Loading...</h1>
+			return (
+				<div class="ui placeholder">
+					<div class="image header">
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<div class="paragraph">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<div class="image header">
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<div class="paragraph">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<div class="image header">
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<div class="paragraph">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<div class="image header">
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+					<div class="paragraph">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+				</div>
+			)
 		}else{
 			return <PokemonList 
 						username={this.props.username}

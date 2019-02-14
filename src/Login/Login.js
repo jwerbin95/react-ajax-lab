@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'semantic-ui-react'
 
 export default class Login extends Component{
 	state={
@@ -17,10 +18,10 @@ export default class Login extends Component{
   	}
 	render(){
 		return(
-			<form onSubmit={this.handleSubmit}>
+			<form class="ui action input" onSubmit={this.handleSubmit}>
 				<input type="text" name="username" placeholder="username" value={this.state.username} onChange={this.handleChange} />
 				<input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} />
-				<input type="submit" value="Submit" />
+				<input class="ui button" type="submit" value="Submit" />
 			</form>
 		)
 	}

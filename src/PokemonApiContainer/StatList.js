@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-
+import { Button } from 'semantic-ui-react'
 export default class StatList extends Component{
 	state={
 		showStats: false,
-		stats: []
+		stats: [],
+		active: false
 	}
-	handleClick=async(key)=>{
+	handleMount=async(key)=>{
 		await this.getStats(key)
 		this.setState({
-			showStats: !this.state.showStats
+			showStats: !this.state.showStats,
+			active: !this.state.active
 		})
 	}
 	getStats = async(key) =>{
@@ -24,6 +26,9 @@ export default class StatList extends Component{
 			return error
 		}
 	}
+	componentDidMount(){
+		this.handleMount(this.props.index)
+	}
 	render(){
 		return(
 			<li key={this.props.index}>
@@ -33,7 +38,6 @@ export default class StatList extends Component{
 					<p>Type: {this.state.stats.types[0].type.name}</p>
 					<img src={this.state.stats.sprites.front_default} alt={this.props.pokemon.name}></img>
 				</div> : null}
-				<button onClick={this.handleClick.bind(null, this.props.index)}>See Stats</button>
 				<p>-----------------------------------</p>
 			</li>
 		)
